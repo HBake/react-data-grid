@@ -20,9 +20,9 @@ export function useColumnWidths<R, SR>(
   const prevGridWidthRef = useRef(gridWidth);
   const columnsCanFlex: boolean = columns.length === viewportColumns.length;
   // Allow columns to flex again when...
-  const ignorePreviouslyMeasuredColumns: boolean =
+  const ignorePreviouslyMeasuredColumns = true
     // there is enough space for columns to flex and the grid was resized
-    columnsCanFlex && gridWidth !== prevGridWidthRef.current;
+    // columnsCanFlex && gridWidth !== prevGridWidthRef.current;
   const newTemplateColumns = [...templateColumns];
   const columnsToMeasure: string[] = [];
 
